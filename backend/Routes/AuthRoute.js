@@ -9,7 +9,6 @@ router.post("/signup", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    // check existing user
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
@@ -19,7 +18,6 @@ router.post("/signup", async (req, res) => {
       });
     }
 
-    // create user (password auto hashed by schema)
     const user = await User.create({
       username,
       email,
@@ -46,7 +44,6 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // find user
     const user = await User.findOne({ email });
 
     if (!user) {
@@ -56,7 +53,6 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    // compare password
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
@@ -66,17 +62,17 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    // create token
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
-    // send cookie
+    // 🔥🔥🔥 FINAL FIX HERE
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
+      secure: true,        // ✅ required for HTTPS (Vercel)
+      sameSite: "none",    // ✅ required for cross-domain
     });
 
     res.json({
@@ -102,7 +98,8 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
+    secure: true,        // ✅ match login
+    sameSite: "none",    // ✅ match login
   });
 
   res.json({ success: true });

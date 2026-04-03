@@ -284,9 +284,6 @@
 //   });
 
 
-
-
-
 require("dotenv").config();
 
 const express = require("express");
@@ -314,7 +311,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:3001",
       "https://trade-app-sooty.vercel.app",
-      "https://trade-app-git-main-mushkinshahabaz8-1191s-projects.vercel.app"
+      "https://trade-app-git-main-mushkinshahabaz8-1191s-projects.vercel.app",
     ],
     credentials: true,
   })
@@ -369,8 +366,8 @@ app.get("/me", async (req, res) => {
 app.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: true,
-    sameSite: "None",
+    secure: true,       // ✅ REQUIRED FOR HTTPS
+    sameSite: "None",   // ✅ REQUIRED FOR VERCEL
   });
 
   res.json({ success: true });
@@ -446,10 +443,7 @@ app.post("/newOrder", async (req, res) => {
       }
 
       if (product === "MIS") {
-        let position = await PositionsModel.findOne({
-          name,
-          user: userId,
-        });
+        let position = await PositionsModel.findOne({ name, user: userId });
 
         if (position) {
           position.qty += quantity;
@@ -474,10 +468,7 @@ app.post("/newOrder", async (req, res) => {
     if (mode === "SELL") {
 
       if (product === "CNC") {
-        let holding = await HoldingsModel.findOne({
-          name,
-          user: userId,
-        });
+        let holding = await HoldingsModel.findOne({ name, user: userId });
 
         if (!holding) {
           return res.json({
@@ -503,10 +494,7 @@ app.post("/newOrder", async (req, res) => {
       }
 
       if (product === "MIS") {
-        let position = await PositionsModel.findOne({
-          name,
-          user: userId,
-        });
+        let position = await PositionsModel.findOne({ name, user: userId });
 
         if (!position) {
           return res.json({
