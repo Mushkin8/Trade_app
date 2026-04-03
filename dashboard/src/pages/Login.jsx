@@ -115,7 +115,7 @@ const Login = () => {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://https://trade-app-sx75.onrender.com/verify",
+          "https://trade-app-sx75.onrender.com/verify",
           {},
           { withCredentials: true }
         );
