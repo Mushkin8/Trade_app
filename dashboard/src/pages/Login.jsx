@@ -16,7 +16,7 @@
 //     const verifyUser = async () => {
 //       try {
 //         const { data } = await axios.post(
-//           "http://localhost:3002/verify",
+//           "http://https://trade-app-sx75.onrender.com/verify",
 //           {},
 //           { withCredentials: true }
 //         );
@@ -44,7 +44,7 @@
 
 //     try {
 //       const { data } = await axios.post(
-//         "http://localhost:3002/login",
+//         "http://https://trade-app-sx75.onrender.com/login",
 //         inputValue,
 //         { withCredentials: true }
 //       );
@@ -115,7 +115,7 @@ const Login = () => {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/verify",
+          "http://https://trade-app-sx75.onrender.com/verify",
           {},
           { withCredentials: true }
         );
@@ -143,7 +143,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "http://https://trade-app-sx75.onrender.com/login",
         {
           email: email.trim().toLowerCase(),   // 🔥 FIX
           password: password.trim(),           // 🔥 FIX

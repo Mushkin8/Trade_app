@@ -6,7 +6,7 @@ const Positions = () => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:3002/allPositions", {
+    .get("http://https://trade-app-sx75.onrender.com/allPositions", {
       withCredentials: true, // ✅ FIX
     })
     .then((res) => {

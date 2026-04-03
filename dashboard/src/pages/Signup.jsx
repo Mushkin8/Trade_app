@@ -46,7 +46,7 @@
 
 //     try {
 //       const { data } = await axios.post(
-//         "http://localhost:3002/signup",
+//         "http://https://trade-app-sx75.onrender.com/signup",
 //         { ...inputValue },
 //         { withCredentials: true }
 //       );
@@ -168,7 +168,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/signup",
+        "http://https://trade-app-sx75.onrender.com/signup",
         {
           email: email.trim().toLowerCase(),   // 🔥 FIX
           username: username.trim(),           // 🔥 FIX

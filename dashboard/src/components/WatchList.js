@@ -24,7 +24,7 @@
 
 //    useEffect(() => {
 //   axios
-//     .get("http://localhost:3002/allHoldings", {
+//     .get("http://https://trade-app-sx75.onrender.com/allHoldings", {
 //       withCredentials: true, // ✅ FIX
 //     })
 //     .then((res) => setHoldings(res.data))
@@ -209,13 +209,13 @@ const WatchList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings", {
+      .get("http://https://trade-app-sx75.onrender.com/allHoldings", {
         withCredentials: true,
       })
       .then((res) => setHoldings(res.data));
 
     axios
-      .get("http://localhost:3002/allPositions", {
+      .get("http://https://trade-app-sx75.onrender.com/allPositions", {
         withCredentials: true,
       })
       .then((res) => setPositions(res.data));

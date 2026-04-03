@@ -14,7 +14,7 @@
 //  const handleSellClick = async () => {
 //   try {
 //     const { data } = await axios.post(
-//       "http://localhost:3002/newOrder",
+//       "http://https://trade-app-sx75.onrender.com/newOrder",
 //       {
 //         name: uid,
 //         qty: stockQuantity,
@@ -106,7 +106,7 @@ const SellActionWindow = ({ uid }) => {
   const handleSellClick = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/newOrder",
+        "http://https://trade-app-sx75.onrender.com/newOrder",
         {
           name: uid,
           qty: Number(stockQuantity),   // ✅ FIX

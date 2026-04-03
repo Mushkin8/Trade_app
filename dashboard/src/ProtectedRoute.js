@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:3002/verify", {}, { withCredentials: true })
+      .post("http://https://trade-app-sx75.onrender.com/verify", {}, { withCredentials: true })
       .then((res) => {
         console.log("VERIFY FRONTEND:", res.data); // ✅ debug
         setIsAuth(res.data.status);

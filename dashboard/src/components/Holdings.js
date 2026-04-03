@@ -9,7 +9,7 @@ const Holdings = () => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:3002/allHoldings", {
+    .get("http://https://trade-app-sx75.onrender.com/allHoldings", {
       withCredentials: true, // ✅ FIX
     })
     .then((res) => {

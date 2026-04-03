@@ -5,7 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await axios.get("http://localhost:3002/logout", {
+    await axios.get("http://https://trade-app-sx75.onrender.com/logout", {
       withCredentials: true,
     });
 

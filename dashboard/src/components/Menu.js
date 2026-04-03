@@ -11,14 +11,14 @@ const Menu = () => {
   // ✅ Fetch user
   useEffect(() => {
     axios
-      .get("http://localhost:3002/me", { withCredentials: true })
+      .get("http://https://trade-app-sx75.onrender.com/me", { withCredentials: true })
       .then((res) => setUser(res.data))
       .catch(() => {});
   }, []);
 
   // ✅ Logout
   const handleLogout = () => {
-  axios.post("http://localhost:3002/logout", {}, {
+  axios.post("http://https://trade-app-sx75.onrender.com/logout", {}, {
     withCredentials: true
   })
   .then(() => {

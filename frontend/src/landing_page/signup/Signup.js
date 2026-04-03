@@ -22,7 +22,7 @@ function Signup() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/signup",
+        "http://https://trade-app-sx75.onrender.com/signup",
         {
           username,
           email,
