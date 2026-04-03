@@ -143,7 +143,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://https://trade-app-sx75.onrender.com/login",
+        "https://trade-app-sx75.onrender.com/login",
         {
           email: email.trim().toLowerCase(),   // 🔥 FIX
           password: password.trim(),           // 🔥 FIX

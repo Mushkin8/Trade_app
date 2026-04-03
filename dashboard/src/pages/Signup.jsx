@@ -168,7 +168,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://https://trade-app-sx75.onrender.com/signup",
+        "https://trade-app-sx75.onrender.com/signup",
         {
           email: email.trim().toLowerCase(),   // 🔥 FIX
           username: username.trim(),           // 🔥 FIX
