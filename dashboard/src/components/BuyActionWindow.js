@@ -1,3 +1,7 @@
+
+
+
+
 // import React, { useState, useContext } from "react";
 // import { Link } from "react-router-dom";
 // import axios from "axios";
@@ -7,32 +11,35 @@
 
 // const BuyActionWindow = ({ uid }) => {
 //   const [stockQuantity, setStockQuantity] = useState(1);
-//   const [stockPrice, setStockPrice] = useState(0.0);
+//   const [stockPrice, setStockPrice] = useState(0);
 
-//   const [product, setProduct] = useState("CNC"); // 🔥 NEW
+//   const [product, setProduct] = useState("CNC");
 
 //   const { closeBuyWindow } = useContext(GeneralContext);
 
 //   const handleBuyClick = async () => {
 //     try {
-//       await axios.post(
+//       const { data } = await axios.post(
 //         "http://https://trade-app-sx75.onrender.com/newOrder",
 //         {
 //           name: uid,
-//           qty: stockQuantity,
-//           price: stockPrice,
+//           qty: Number(stockQuantity),     // ✅ FIX
+//           price: Number(stockPrice),      // ✅ FIX
 //           mode: "BUY",
-//           product: product, // 🔥 dynamic
+//           product: product,
 //         },
-//         { withCredentials: true ,
-
-//         }
-
+//         { withCredentials: true }
 //       );
+
+//       if (!data.success) {
+//         alert(data.message);
+//         return;
+//       }
 
 //       closeBuyWindow();
 //     } catch (err) {
-//       console.error("Error placing order:", err);
+//       console.error(err);
+//       alert("Buy failed");
 //     }
 //   };
 
@@ -41,10 +48,10 @@
 //   };
 
 //   return (
-//     <div className="container" id="buy-window" draggable="true">
+//     <div className="container" id="buy-window">
 //       <div className="regular-order">
 
-//         {/* 🔥 PRODUCT TOGGLE */}
+//         {/* ✅ PRODUCT TOGGLE */}
 //         <div className="product-toggle">
 //           <button
 //             className={product === "CNC" ? "active-btn" : ""}
@@ -66,9 +73,11 @@
 //             <legend>Qty.</legend>
 //             <input
 //               type="number"
-//               name="qty"
-//               onChange={(e) => setStockQuantity(e.target.value)}
 //               value={stockQuantity}
+//               min="1"
+//               onChange={(e) =>
+//                 setStockQuantity(Number(e.target.value))
+//               }
 //             />
 //           </fieldset>
 
@@ -76,10 +85,11 @@
 //             <legend>Price</legend>
 //             <input
 //               type="number"
-//               name="price"
 //               step="0.05"
-//               onChange={(e) => setStockPrice(e.target.value)}
 //               value={stockPrice}
+//               onChange={(e) =>
+//                 setStockPrice(Number(e.target.value))
+//               }
 //             />
 //           </fieldset>
 //         </div>
@@ -91,13 +101,13 @@
 //         </span>
 
 //         <div>
-//           <Link className="btn btn-blue" onClick={handleBuyClick}>
+//           <button className="btn btn-blue" onClick={handleBuyClick}>
 //             Buy
-//           </Link>
+//           </button>
 
-//           <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+//           <button className="btn btn-grey" onClick={handleCancelClick}>
 //             Cancel
-//           </Link>
+//           </button>
 //         </div>
 //       </div>
 //     </div>
@@ -108,9 +118,7 @@
 
 
 
-
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
@@ -119,7 +127,6 @@ import "./BuyActionWindow.css";
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0);
-
   const [product, setProduct] = useState("CNC");
 
   const { closeBuyWindow } = useContext(GeneralContext);
@@ -127,15 +134,17 @@ const BuyActionWindow = ({ uid }) => {
   const handleBuyClick = async () => {
     try {
       const { data } = await axios.post(
-        "http://https://trade-app-sx75.onrender.com/newOrder",
+        "https://trade-app-sx75.onrender.com/newOrder",
         {
           name: uid,
-          qty: Number(stockQuantity),     // ✅ FIX
-          price: Number(stockPrice),      // ✅ FIX
+          qty: Number(stockQuantity),
+          price: Number(stockPrice),
           mode: "BUY",
           product: product,
         },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+        }
       );
 
       if (!data.success) {
@@ -158,7 +167,7 @@ const BuyActionWindow = ({ uid }) => {
     <div className="container" id="buy-window">
       <div className="regular-order">
 
-        {/* ✅ PRODUCT TOGGLE */}
+        {/* PRODUCT TOGGLE */}
         <div className="product-toggle">
           <button
             className={product === "CNC" ? "active-btn" : ""}
@@ -175,6 +184,7 @@ const BuyActionWindow = ({ uid }) => {
           </button>
         </div>
 
+        {/* INPUTS */}
         <div className="inputs">
           <fieldset>
             <legend>Qty.</legend>
@@ -202,6 +212,7 @@ const BuyActionWindow = ({ uid }) => {
         </div>
       </div>
 
+      {/* ACTION BUTTONS */}
       <div className="buttons">
         <span>
           Order Type: <b>{product}</b>
