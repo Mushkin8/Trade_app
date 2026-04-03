@@ -209,13 +209,13 @@ const WatchList = () => {
 
   useEffect(() => {
     axios
-      .get("http://https://trade-app-sx75.onrender.com/allHoldings", {
+      .get("https://trade-app-sx75.onrender.com/allHoldings", {
         withCredentials: true,
       })
       .then((res) => setHoldings(res.data));
 
     axios
-      .get("http://https://trade-app-sx75.onrender.com/allPositions", {
+      .get("https://trade-app-sx75.onrender.com/allPositions", {
         withCredentials: true,
       })
       .then((res) => setPositions(res.data));

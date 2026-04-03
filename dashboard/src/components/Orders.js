@@ -11,7 +11,7 @@ const Orders = () => {
 
  useEffect(() => {
   axios
-    .get("http://https://trade-app-sx75.onrender.com/allOrders", {
+    .get("https://trade-app-sx75.onrender.com/allOrders", {
       withCredentials: true, // ✅ FIX
     })
     .then((res) => {

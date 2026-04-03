@@ -11,14 +11,14 @@ const Menu = () => {
   // ✅ Fetch user
   useEffect(() => {
     axios
-      .get("http://https://trade-app-sx75.onrender.com/me", { withCredentials: true })
+      .get("https://trade-app-sx75.onrender.com/me", { withCredentials: true })
       .then((res) => setUser(res.data))
       .catch(() => {});
   }, []);
 
   // ✅ Logout
   const handleLogout = () => {
-  axios.post("http://https://trade-app-sx75.onrender.com/logout", {}, {
+  axios.post("https://trade-app-sx75.onrender.com/logout", {}, {
     withCredentials: true
   })
   .then(() => {
