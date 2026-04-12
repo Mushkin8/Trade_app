@@ -22,7 +22,7 @@ function Signup() {
 
     try {
       const { data } = await axios.post(
-        "http://https://trade-app-sx75.onrender.com/signup",
+        "https://trade-app-sx75.onrender.com/signup", // ✅ FIXED URL
         {
           username,
           email,
@@ -32,7 +32,9 @@ function Signup() {
 
       if (data.success) {
         alert("Signup successful");
-        window.location.href = "http://localhost:3001/login";
+
+        // ✅ REDIRECT TO DEPLOYED DASHBOARD
+        window.location.href = "https://trade-app-sooty.vercel.app/login";
       } else {
         alert(data.message);
       }
@@ -75,7 +77,7 @@ function Signup() {
 
         <p>
           Already have an account?{" "}
-          <a href="http://localhost:3001/login">Login</a>
+          <a href="https://trade-app-sooty.vercel.app/login">Login</a>
         </p>
       </form>
     </div>
