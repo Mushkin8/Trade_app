@@ -34,22 +34,22 @@ function Footer() {
             <p>Support</p>
             <a href="/">Contact</a>
             <br />
-            <a href="">Support portal</a>
+            <a href="/">Support portal</a>
             <br />
-            <a href="">Z-Connect blog</a>
+            <a href="/">Z-Connect blog</a>
             <br />
-            <a href="">List of charges</a>
+            <a href="/">List of charges</a>
             <br />
-            <a href="">Downloads & resources</a>
+            <a href="/">Downloads & resources</a>
             <br />
           </div>
           <div className="col">
             <p>Account</p>
-            <a href="">Open an account</a>
+            <a href="/">Open an account</a>
             <br />
-            <a href="">Fund transfer</a>
+            <a href="/">Fund transfer</a>
             <br />
-            <a href="">60 day challenge</a>
+            <a href="/">60 day challenge</a>
             <br />
           </div>
         </div>
