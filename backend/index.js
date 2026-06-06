@@ -312,6 +312,7 @@ app.use(
       "http://localhost:3001",
       "https://trade-app-sooty.vercel.app",
       "https://trade-app-git-main-mushkinshahabaz8-1191s-projects.vercel.app",
+      "https://trade-app-lt9b.vercel.app" 
     ],
     credentials: true,
   })
