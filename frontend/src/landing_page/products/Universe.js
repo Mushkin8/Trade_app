@@ -63,17 +63,17 @@ function Universe() {
       {/* ROW 1 */}
       <div className="row mt-5">
         <div className="col-4 p-3">
-          <img src="media/images/smallcaseLogo.png" className="img-fluid logo" />
+          <img src="media/images/smallcaseLogo.png"   alt="Smallcase" className="img-fluid logo" />
           <p className="text-muted">Thematic investment platform</p>
         </div>
 
         <div className="col-4 p-3">
-          <img src="media/images/streakLogo.png" className="img-fluid logo" />
+          <img src="media/images/streakLogo.png"   alt="streak" className="img-fluid logo" />
           <p className="text-muted">Algo & strategy platform</p>
         </div>
 
         <div className="col-4 p-3">
-          <img src="media/images/sensibullLogo.svg" className="img-fluid logo" />
+          <img src="media/images/sensibullLogo.svg"   alt="sensibull" className="img-fluid logo" />
           <p className="text-muted">Options trading platform</p>
         </div>
       </div>
@@ -81,17 +81,17 @@ function Universe() {
       {/* ROW 2 */}
       <div className="row">
         <div className="col-4 p-3">
-          <img src="media/images/zerodhaFundhouse.png" className="img-fluid logo" />
+          <img src="media/images/zerodhaFundhouse.png"   alt="zerodhafundhouse" className="img-fluid logo" />
           <p className="text-muted">Asset management</p>
         </div>
 
         <div className="col-4 p-3">
-          <img src="media/images/goldenpiLogo.png" className="img-fluid logo" />
+          <img src="media/images/goldenpiLogo.png"  alt="GoldenPi" className="img-fluid logo" />
           <p className="text-muted">Bonds trading platform</p>
         </div>
 
         <div className="col-4 p-3">
-          <img src="media/images/dittoLogo.png" className="img-fluid logo" />
+          <img src="media/images/dittoLogo.png"   alt="Ditto" className="img-fluid logo" />
           <p className="text-muted">Insurance</p>
         </div>
       </div>
