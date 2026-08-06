@@ -1,0 +1,58 @@
+# 📈 Trade App
+
+## Overview
+Trade App is a full-stack stock trading platform inspired by modern brokerage applications. It provides a responsive dashboard to manage holdings, positions, orders, and user portfolios.
+
+## Features
+- User authentication
+- Dashboard with holdings, positions, and orders
+- Buy/Sell workflow
+- RESTful API
+- Responsive UI
+- Modular React components
+
+## Tech Stack
+**Frontend:** React.js, HTML, CSS, JavaScript, Axios
+
+**Backend:** Node.js, Express.js
+
+**Database:** MongoDB
+
+## Installation
+```bash
+git clone <repo-url>
+cd Trade_app
+npm install
+```
+
+Backend:
+```bash
+cd backend
+npm install
+npm start
+```
+
+Frontend:
+```bash
+cd frontend
+npm install
+npm start
+```
+
+## Folder Structure
+```
+Trade_app/
+├── frontend/
+├── backend/
+└── dashboard/
+```
+
+## Future Improvements
+- Live market data
+- Portfolio analytics
+- Watchlists
+- Notifications
+- Dark mode
+
+## Author
+**Mushkin Shahabaz Vali**
