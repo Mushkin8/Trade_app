@@ -1688,3 +1688,16 @@ body {
     font-weight: 600;
   }
 }
+
+
+/* FINAL FIX FOR CONTENT POSITION */
+.dashboard-container {
+  margin-top: 60px;
+  align-items: flex-start !important;
+  height: calc(100vh - 60px);
+}
+
+.content {
+  margin-top: 0 !important;
+  padding-top: 30px !important;
+}
