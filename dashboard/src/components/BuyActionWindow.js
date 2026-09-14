@@ -126,7 +126,7 @@ import "./BuyActionWindow.css";
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
-  const [stockPrice, setStockPrice] = useState(0);
+  const [stockPrice, setStockPrice] = useState("0");
   const [product, setProduct] = useState("CNC");
 
   const { closeBuyWindow } = useContext(GeneralContext);
@@ -198,7 +198,7 @@ const BuyActionWindow = ({ uid }) => {
             />
           </fieldset>
 
-          <fieldset>
+          {/* <fieldset>
             <legend>Price</legend>
             <input
               type="number"
@@ -208,7 +208,28 @@ const BuyActionWindow = ({ uid }) => {
                 setStockPrice(Number(e.target.value))
               }
             />
-          </fieldset>
+          </fieldset> */}
+          <fieldset>
+  <legend>Price</legend>
+  <input
+    type="number"
+    step="0.05"
+    value={stockPrice}
+    onFocus={(e) => {
+      if (e.target.value === "0") {
+        setStockPrice("");
+      }
+    }}
+    onChange={(e) =>
+      setStockPrice(e.target.value)
+    }
+    onBlur={() => {
+      if (stockPrice === "") {
+        setStockPrice("0");
+      }
+    }}
+  />
+</fieldset>
         </div>
       </div>
 
